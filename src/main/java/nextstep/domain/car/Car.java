@@ -5,11 +5,15 @@ import java.util.Objects;
 public class Car implements Comparable<Car> {
 
     private final static int MIN_MOVE_POSITION = 4;
+    private final static int MAX_NAME_LENGTH = 5;
 
     private String name;
     private Position position;
 
     public Car(String name) {
+        if (name.length() > MAX_NAME_LENGTH) {
+            throw new RuntimeException("자동차 이름은 5자리를 초과할 수 없습니다.");
+        }
         this.name = name;
         this.position = new Position();
     }

@@ -44,7 +44,8 @@ public class GameBot {
         List<Car> carList = carGroup.getCarList();
         for (Car car : carList) {
             System.out
-              .println(String.format("%s: %s", car.getName(), StringUtils.padLeft("-", car.getPosition().getValue())));
+              .println(String.format("%s: %s", car.getName().getValue(),
+                                     StringUtils.padLeft("-", car.getPosition().getValue())));
         }
         System.out.println();
     }
@@ -56,7 +57,7 @@ public class GameBot {
     private String getNames(List<Car> carList) {
         StringBuilder builder = new StringBuilder();
         for (Car c : carList) {
-            builder.append(c.getName());
+            builder.append(c.getName().getValue());
             builder.append(",");
         }
         if (builder.length() > 0) {

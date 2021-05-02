@@ -7,4 +7,8 @@ public class Position {
     public int getValue() {
         return this.value;
     }
+
+    public Position move(int move) {
+        return new Position();
+    }
 }
